@@ -1,0 +1,132 @@
+.foldersBar11main {
+  display: flex;
+  flex-direction: row;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2.5%;
+}
+
+.foldersBar11MenuBar {
+  width: 15%;
+  background-color: rgba(51, 70, 101, 0.4);
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  height: 90vh;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.btn {
+  cursor: "pointer";
+}
+
+.imgham {
+  width: 35px;
+  height: 35px;
+  margin-left: 18px;
+  cursor: pointer;
+}
+.foldersBar11FoldersBar {
+  display: flex;
+  flex-direction: column;
+  width: 75%;
+  height: 90vh;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background-color: rgba(255, 255, 255, 0.4);
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+  overflow-y: scroll;
+}
+
+.right44addfolder {
+  margin-top: 20px;
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 70px;
+  height: 80px;
+  border: 2px dashed rgb(207, 204, 204);
+}
+
+.right44folder {
+  width: 10px;
+  height: 10px;
+}
+/* .images {
+  margin-top: 140px;
+  margin-left: -328px;
+} */
+.img {
+  width: 90px;
+  height: 90px;
+  padding: 20px;
+  cursor: pointer;
+}
+
+.folders {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin-left: 15px;
+  /* background-color: aqua; */
+}
+#right44file {
+  margin-top: 10px;
+  width: 60px;
+  height: 70px;
+  margin-bottom: 16px;
+}
+
+.nav {
+  width: 100%;
+  height: 6%;
+}
+
+.content {
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns:
+    auto auto auto auto auto
+    auto auto auto auto auto;
+}
+
+.dis {
+  display: none;
+}
+@media screen and (max-width: 768px) {
+  .foldersBar11MenuBar {
+    display: none;
+  }
+
+  .foldersBar11FoldersBar {
+    width: 100%;
+    border-radius: 30px;
+    height: 100vh;
+    border-radius: 0;
+    margin-top: 0;
+    box-shadow: none;
+  }
+  .dis {
+    display: contents;
+  }
+  .grid-container {
+    grid-template-columns: auto auto auto;
+  }
+  .right44addfolder {
+    flex-direction: row;
+    height: 50px;
+    width: 90px;
+    color: gray;
+    margin-left: 30px;
+    margin-top: 60px;
+  }
+}

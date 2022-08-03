@@ -1,0 +1,104 @@
+.right44btn {
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 30px;
+  background-color: #0177bd;
+  color: aliceblue;
+  cursor: pointer;
+}
+
+.right44btn:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navleft {
+  width: 50%;
+}
+.navright {
+  width: 50%;
+}
+
+#search {
+  margin-top: 2.5%;
+  border: none;
+  border-radius: 10px;
+  margin-left: 112px;
+  width: 80%;
+  height: 40px;
+  padding-left: 15px;
+  border: 0.5px solid rgb(175, 175, 175);
+  cursor: pointer;
+}
+
+.grid {
+  width: 20%;
+  /* border-radius: 20px; */
+  margin-left: 280px;
+  position: fixed;
+
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2), 0 2px 1px 0 rgba(0, 0, 0, 0.19);
+}
+.check {
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.check:hover {
+  background-color: rgba(0, 0, 0, 0.09);
+}
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+}
+
+#search:hover {
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 2px 8px 0 rgba(0, 0, 0, 0.19);
+}
+
+.list {
+  width: 60%;
+  height: 30px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.list:hover {
+  background-color: rgba(0, 0, 0, 0.19);
+}
+#breadcrumb {
+  overflow: auto;
+  white-space: nowrap;
+}
+@media screen and (max-width: 768px) {
+  .navleft {
+    width: 100%;
+    margin-left: 18px;
+    display: flex;
+    margin-top: 5px;
+  }
+  .navright {
+    width: 100%;
+    margin-left: 0;
+  }
+  #search {
+    width: 90%;
+    margin-left: 20px;
+  }
+  .main {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .content {
+    margin-left: 10px;
+  }
+}

@@ -1,0 +1,40 @@
+.home11Background {
+  background-image: url("/public/mac.jpeg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  object-fit: cover;
+  height: 100vh;
+  width: 100vw;
+}
+
+.home11Main {
+  margin-left: 35%;
+  width: 30%;
+  height: 70px;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 1px 4px 0 rgba(255, 255, 255, 0.2),
+    0 1px 4px 0 rgba(255, 255, 255, 0.19);
+  margin-bottom: 15px;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#home11Finder {
+  height: 60px;
+  width: 60px;
+  background-color: none;
+}
+
+#home11Dot {
+  height: 4px;
+  width: 4px;
+  border-radius: 4px;
+  background-color: rgb(128, 128, 128);
+}

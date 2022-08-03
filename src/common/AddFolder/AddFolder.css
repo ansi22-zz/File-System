@@ -1,0 +1,103 @@
+.folder55main {
+  /* background-color: #3d3c3c; */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  width: 260px;
+  height: 350px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* color: white; */
+}
+
+#input {
+  width: 70%;
+  height: 6%;
+  margin-bottom: 8%;
+  border-color: #0177bd;
+  padding: 8px;
+}
+
+#right44btn {
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 30px;
+  background-color: #0177bd;
+  color: aliceblue;
+  cursor: pointer;
+}
+#right44btn:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+#input:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.toggle {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 8%;
+  margin-top: 10px;
+  padding: 5px;
+  font-size: 28px;
+}
+#file {
+  width: 60px;
+  height: 30px;
+  padding-right: 12px;
+  padding-left: 12px;
+}
+#folder {
+  width: 60px;
+  height: 30px;
+  /* padding-right: 12px;
+  padding-left: 12px; */
+}
+.dark {
+  background-color: #0177bd;
+  cursor: pointer;
+  color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border: none;
+}
+
+.light {
+  cursor: pointer;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-color: 1px solid #0177bd;
+  border: none;
+}
+
+.modal88btn {
+  background-color: #0177bd;
+  color: aliceblue;
+  width: 78%;
+  height: 11%;
+  margin-bottom: 3%;
+  cursor: pointer;
+  border: none;
+}
+
+.modal88circularbtn {
+  background-color: #0177bd;
+  color: aliceblue;
+  width: 40px;
+  height: 40px;
+  border-radius: 40px;
+  margin-left: 230px;
+  margin-top: -40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.modal88circularbtn:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.modal88btn:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
