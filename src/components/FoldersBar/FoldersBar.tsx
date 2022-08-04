@@ -14,7 +14,6 @@ import MenuBar from "../MenuBar/MenuBar";
 import Nav from "../Nav/Nav";
 
 import "./FolderBar.css";
-import Loading from "../Loading/Loading";
 
 const st = {
   id: "",
