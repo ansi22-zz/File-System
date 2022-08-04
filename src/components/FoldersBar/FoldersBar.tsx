@@ -39,7 +39,6 @@ function FoldersBar(props: folderProps) {
   const [open, setOpen] = useState(false);
   const [images, setImages] = useState<Array<string>>([]);
   const [page, setPage] = useState(1);
-
   const [hasMore, setHasMore] = useState(true);
   const [f, setF] = useState<folderProps>(st);
   const [error, setError] = useState("");
@@ -244,7 +243,7 @@ function FoldersBar(props: folderProps) {
                           dataLength={images.length}
                           next={fetchImages}
                           hasMore={hasMore}
-                          loader={<Loading />}
+                          loader={<p>Loading...</p>}
                           endMessage={
                             <p style={{ textAlign: "center" }}>
                               <b>Yay! You have seen it all</b>
