@@ -15,7 +15,7 @@ import Nav from "../Nav/Nav";
 
 import "./FolderBar.css";
 
-const st = {
+const foldpass = {
   id: "",
   type: "",
   name: "",
@@ -39,7 +39,7 @@ function FoldersBar(props: folderProps) {
   const [images, setImages] = useState<Array<string>>([]);
   const [page, setPage] = useState(1);
   const [hasMore, setHasMore] = useState(true);
-  const [f, setF] = useState<folderProps>(st);
+  const [folderpass, setFolderpass] = useState<folderProps>(foldpass);
   const [error, setError] = useState("");
   const [isDesktop, setDesktop] = useState(window.innerWidth > 650);
   const [points, setPoints] = useState({ x: 0, y: 0 });
@@ -95,7 +95,7 @@ function FoldersBar(props: folderProps) {
     dispatch(setContext({ active: true }));
     setPoints({ x: e.pageX, y: e.pageY });
     setOpen(true);
-    setF(folder);
+    setFolderpass(folder);
   };
 
   const folderClicked = () => {
@@ -106,7 +106,7 @@ function FoldersBar(props: folderProps) {
   return (
     <div>
       <>
-        {open && <ContextMenu folder={f} x={points.x} y={points.y} />}
+        {open && <ContextMenu folder={folderpass} x={points.x} y={points.y} />}
         <div className="foldersBar11main">
           <div className="foldersBar11MenuBar">
             <MenuBar />
