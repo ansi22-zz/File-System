@@ -20,8 +20,8 @@ function AddFolder(props: folderProps) {
 
   const handleClick = () => {
     if (name.length > 0 && creator.length > 0) {
-      const namelength = name.length > 10 ? 10 : name.length;
-      const creatorlength = creator.length > 10 ? 10 : creator.length;
+      const namelength = name.length > 8 ? 8 : name.length;
+      const creatorlength = creator.length > 8 ? 8 : creator.length;
 
       setName(name.substring(0, namelength));
       setCreator(creator.substring(0, creatorlength));

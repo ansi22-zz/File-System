@@ -17,6 +17,7 @@
   margin-bottom: 8%;
   border-color: #0177bd;
   padding: 8px;
+  border-radius: 15px;
 }
 
 #right44btn {
@@ -79,6 +80,7 @@
   margin-bottom: 3%;
   cursor: pointer;
   border: none;
+  border-radius: 15px;
 }
 
 .modal88circularbtn {

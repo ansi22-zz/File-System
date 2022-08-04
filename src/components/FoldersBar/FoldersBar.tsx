@@ -14,6 +14,7 @@ import MenuBar from "../MenuBar/MenuBar";
 import Nav from "../Nav/Nav";
 
 import "./FolderBar.css";
+import Loading from "../Loading/Loading";
 
 const st = {
   id: "",
@@ -36,39 +37,38 @@ function FoldersBar(props: folderProps) {
   const info = state.info.active;
 
   const [open, setOpen] = useState(false);
-  const [images, setImages] = useState<Array<any>>([]);
+  const [images, setImages] = useState<Array<string>>([]);
   const [page, setPage] = useState(1);
+
   const [hasMore, setHasMore] = useState(true);
   const [f, setF] = useState<folderProps>(st);
+  const [error, setError] = useState("");
   const [isDesktop, setDesktop] = useState(window.innerWidth > 650);
-  const [show, setShow] = useState(false);
   const [points, setPoints] = useState({ x: 0, y: 0 });
 
   const fetchImages = () => {
-    setImages([]);
-    setPage(1);
+    setError("");
     const apiRoot = "https://api.unsplash.com";
-    const client_id = "4iPu1kFa5nn1uwWHrpR7RviSdsf7XuS1iCIMT0Ed8IY";
+    const client_id = "slCspcsGCeF8Dr6_pVCXKzpOvVL_4C7nvtbgcHJQa6Q";
     axios
       .get(
-        `${apiRoot}/search/photos?client_id=${client_id}&query=${props.name}&page=${page}`
+        `${apiRoot}/search/photos?query=${props.name}&client_id=${client_id}&page=${page}&per_page=20&orientation=landscape`
       )
-      .then((res) => setImages([...res.data.results]));
-    setPage(page + 1);
+      .then((res) => {
+        setImages([...images, ...res.data.results]);
+        setPage(page + 1);
+        localStorage.setItem(props.name, JSON.stringify(images));
+      })
+      .catch((err) => {
+        setError(err.message);
+        console.log(err.message);
+      });
   };
-
+  // slCspcsGCeF8Dr6_pVCXKzpOvVL_4C7nvtbgcHJQa6Q
   useEffect(() => {
-    setImages([]);
-    setPage(1);
+    setError("");
     fetchImages();
   }, [props.name]);
-  // https://api.unsplash.com/search/photos?client_id=${client_id}&query=${query}&page=${page}
-
-  useEffect(() => {
-    const handleClick = () => setShow(false);
-    window.addEventListener("click", handleClick);
-    return () => window.removeEventListener("click", handleClick);
-  }, []);
 
   useEffect(() => {
     window.addEventListener("resize", updateMedia);
@@ -98,6 +98,11 @@ function FoldersBar(props: folderProps) {
     setPoints({ x: e.pageX, y: e.pageY });
     setOpen(true);
     setF(folder);
+  };
+
+  const folderClicked = () => {
+    dispatch(setContext({ active: false }));
+    setImages([]);
   };
 
   return (
@@ -143,12 +148,7 @@ function FoldersBar(props: folderProps) {
                 array={props.array}
               />
             </div>
-            <div className="right44addfolder">
-              New&nbsp;&nbsp;
-              <button onClick={clicked} id="right44btn">
-                +
-              </button>
-            </div>
+
             <div className="content">
               {modalState ? (
                 <>
@@ -171,16 +171,29 @@ function FoldersBar(props: folderProps) {
               ) : (
                 <></>
               )}
+
               <div className="grid-container">
+                <div className="grid-item">
+                  {props.type === "folder" ? (
+                    <>
+                      <div className="right44addfolder">
+                        <div className="new"> New</div>
+                        <button onClick={clicked} id="right44btn">
+                          +
+                        </button>
+                      </div>
+                    </>
+                  ) : (
+                    <></>
+                  )}
+                </div>
                 {folders.map((folder: folderProps, idx: number) => {
                   return (
                     <>
                       <div className="grid-item">
                         <p key={idx}>
                           <div
-                            onClick={() =>
-                              dispatch(setContext({ active: false }))
-                            }
+                            onClick={folderClicked}
                             onContextMenu={(e) => rightClick(e, folder)}
                             onDoubleClick={() => handleClicked(folder.name)}
                             className="folders"
@@ -210,17 +223,28 @@ function FoldersBar(props: folderProps) {
                     </>
                   );
                 })}
-                {props.name == "root" ? (
-                  <></>
-                ) : (
-                  <>
-                    {props.type == "folder" ? (
-                      <>
+              </div>
+              {props.type == "file" ? (
+                <>
+                  {error.length > 0 ? (
+                    <>
+                      <div className="errorimg">
+                        <img
+                          src="/error.png"
+                          alt="It's not you, It's us. Error Occured!"
+                          id="img-error"
+                        />
+                      </div>
+                    </>
+                  ) : (
+                    <>
+                      {" "}
+                      <div className="grid-container-img">
                         <InfiniteScroll
                           dataLength={images.length}
                           next={fetchImages}
                           hasMore={hasMore}
-                          loader={<p>Load more...</p>}
+                          loader={<Loading />}
                           endMessage={
                             <p style={{ textAlign: "center" }}>
                               <b>Yay! You have seen it all</b>
@@ -230,24 +254,22 @@ function FoldersBar(props: folderProps) {
                           {images.map((image: any, index: number) => {
                             const str = image.urls.thumb;
                             return (
-                              <div className="grid-item">
-                                <img
-                                  className=" img"
-                                  key={index}
-                                  src={str}
-                                  alt="loading"
-                                />
-                              </div>
+                              <img
+                                className="img"
+                                key={index}
+                                src={str}
+                                alt="loading"
+                              />
                             );
                           })}
                         </InfiniteScroll>
-                      </>
-                    ) : (
-                      <></>
-                    )}
-                  </>
-                )}
-              </div>
+                      </div>
+                    </>
+                  )}
+                </>
+              ) : (
+                <></>
+              )}
             </div>
           </div>
         </div>

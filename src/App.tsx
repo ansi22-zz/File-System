@@ -1,9 +1,9 @@
-import AllRoutes from "./components/AllRoutes/AllRoutes";
+import AllFolders from "./components/AllFolders/AllFolders";
 
 function App() {
   return (
     <div>
-      <AllRoutes />
+      <AllFolders />
     </div>
   );
 }

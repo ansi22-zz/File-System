@@ -63,13 +63,13 @@ function ContextMenu(props: menu) {
           <div className="bg">
             <div className="context" style={{ left: props.x, top: props.y }}>
               <div className="green" onClick={openHandle}>
-                open
+                Open
               </div>
               <div className="yellow" onClick={infoHandle}>
-                info
+                Info
               </div>
               <div className="red" onClick={deleteHandle}>
-                delete
+                Delete
               </div>
             </div>
           </div>

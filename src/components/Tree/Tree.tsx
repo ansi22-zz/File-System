@@ -7,7 +7,7 @@ function Tree(props: folderProps) {
 
   return (
     <>
-      <div className="ul">
+      <div className="ul" style={{ cursor: "pointer" }}>
         {data.map((node: any) => {
           return (
             <>

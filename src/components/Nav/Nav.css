@@ -2,10 +2,11 @@
   width: 30px;
   height: 30px;
   border: none;
-  border-radius: 30px;
+  border-radius: 35px;
   background-color: #0177bd;
   color: aliceblue;
   cursor: pointer;
+  font-size: 15px;
 }
 
 .right44btn:hover {
@@ -17,8 +18,26 @@
   justify-content: center;
 }
 
+.scroll {
+  overflow: auto;
+  white-space: nowrap;
+}
+.breadcrumbs {
+  background: none;
+  border: none;
+  font-size: large;
+  color: gray;
+  cursor: pointer;
+}
+.breadcrumbs:hover {
+  color: black;
+}
 .navleft {
   width: 50%;
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+  margin-left: 12px;
 }
 .navright {
   width: 50%;
@@ -34,6 +53,10 @@
   padding-left: 15px;
   border: 0.5px solid rgb(175, 175, 175);
   cursor: pointer;
+}
+
+#search::placeholder {
+  justify-content: space-between;
 }
 
 .grid {

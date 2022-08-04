@@ -5,7 +5,7 @@ import { composeWithDevTools } from "redux-devtools-extension";
 import reducers from "./Reducers";
 import { State } from "../utils/types";
 
-localStorage.clear();
+// localStorage.clear();
 function saveToLocalStorage(state: State) {
   try {
     const serialisedState = JSON.stringify(state);

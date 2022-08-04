@@ -17,6 +17,18 @@ function Nav(props: folderProps) {
   const aa = state.addedFolder.array;
   let patharray = [];
   patharray = str.split("/");
+  patharray.shift();
+
+  const breadcrumbClicked = (value: string) => {
+    if (value === "root") {
+      navigate(`${"/root"}`);
+    }
+    aa.map((element: folderProps) => {
+      if (element.name === value) {
+        navigate(`${element.path}`);
+      }
+    });
+  };
 
   const clicked = (name: string) => {
     setShow(false);
@@ -37,15 +49,32 @@ function Nav(props: folderProps) {
   return (
     <div className="main">
       <div className="navleft">
-        &nbsp;&nbsp;
-        <button className="right44btn" onClick={() => navigate(-1)}>
-          &lt;
-        </button>
-        <button className="right44btn" onClick={() => navigate(1)}>
-          &gt;
-        </button>
-        &nbsp;&nbsp;
-        <span id="breadcrumb">{str}</span>
+        <>
+          &nbsp;&nbsp;
+          <button className="right44btn" onClick={() => navigate(-1)}>
+            &lt;
+          </button>
+          &nbsp;&nbsp;
+          <button className="right44btn" onClick={() => navigate(1)}>
+            &gt;
+          </button>
+          &nbsp;&nbsp;&nbsp;&nbsp;
+          <div className="scroll">
+            {patharray.map((element: string) => {
+              return (
+                <>
+                  &gt;
+                  <button
+                    className="breadcrumbs"
+                    onClick={() => breadcrumbClicked(element)}
+                  >
+                    {element}
+                  </button>
+                </>
+              );
+            })}
+          </div>
+        </>
       </div>
       <div className="navright">
         <div className="search">

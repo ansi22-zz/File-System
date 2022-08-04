@@ -19,6 +19,17 @@
   cursor: "pointer";
 }
 
+#right44btn {
+  width: 35px;
+  height: 35px;
+  border: none;
+  border-radius: 35px;
+  background-color: #0177bd;
+  color: aliceblue;
+  cursor: pointer;
+  font-size: 30px;
+}
+
 .imgham {
   width: 35px;
   height: 35px;
@@ -36,6 +47,34 @@
   border-bottom-right-radius: 30px;
   overflow-y: scroll;
 }
+.new {
+  padding: 4px;
+}
+#img-error {
+  width: 100px;
+  height: 100px;
+}
+.errorimg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+}
+
+.imgclicked {
+  height: 50px;
+  width: 50px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.19);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 .right44addfolder {
   margin-top: 20px;
@@ -44,8 +83,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 70px;
-  height: 80px;
+  width: 80px;
+  height: 105px;
   border: 2px dashed rgb(207, 204, 204);
 }
 
@@ -53,10 +92,7 @@
   width: 10px;
   height: 10px;
 }
-/* .images {
-  margin-top: 140px;
-  margin-left: -328px;
-} */
+
 .img {
   width: 90px;
   height: 90px;
@@ -83,6 +119,7 @@
 .nav {
   width: 100%;
   height: 6%;
+  position: static;
 }
 
 .content {
@@ -97,6 +134,10 @@
   grid-template-columns:
     auto auto auto auto auto
     auto auto auto auto auto;
+}
+
+.grid-container-img {
+  margin-left: 60px;
 }
 
 .dis {
@@ -121,12 +162,7 @@
   .grid-container {
     grid-template-columns: auto auto auto;
   }
-  .right44addfolder {
-    flex-direction: row;
-    height: 50px;
-    width: 90px;
-    color: gray;
-    margin-left: 30px;
-    margin-top: 60px;
+  .grid-container-img {
+    margin-left: 40px;
   }
 }

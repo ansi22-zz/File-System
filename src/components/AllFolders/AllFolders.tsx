@@ -5,7 +5,7 @@ import FoldersBar from "../FoldersBar/FoldersBar";
 import Home from "../Home/Home";
 import { folderProps, State } from "../../utils/types";
 
-function AllRoutes() {
+function AllFolders() {
   const state = useSelector((state: State) => state);
   const array = state.addedFolder.array;
   const folder = state.addedFolder;
@@ -66,4 +66,4 @@ function AllRoutes() {
   );
 }
 
-export default AllRoutes;
+export default AllFolders;

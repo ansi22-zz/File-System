@@ -17,19 +17,26 @@ function TreeNode(props: folderProps) {
         {props.type == "folder" ? (
           <>
             {" "}
-            <span>📁 {props.name}</span>
+            <span id="name">📁 {props.name}</span>
           </>
         ) : (
           <>
             {" "}
-            <span>📄 {props.name}</span>
+            <span id="name">📄 {props.name}</span>
           </>
         )}
 
         {/* 📄 */}
       </div>
 
-      <div className="ul">
+      <div
+        className="ul"
+        style={{
+          marginLeft: "20px",
+          borderLeft: "1px solid gray",
+          cursor: "pointer",
+        }}
+      >
         {showChildren && (
           <Tree
             id={props.id}
