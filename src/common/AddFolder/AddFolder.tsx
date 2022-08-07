@@ -5,6 +5,7 @@ import md5 from "md5";
 import { addFolder, setModal } from "../../store/Actions";
 import { folderProps, modalProps, State } from "../../utils/types";
 import "./AddFolder.css";
+import { FILE, FOLDER } from "../../utils/constants";
 
 function AddFolder(props: folderProps) {
   const [name, setName] = useState<string>("");
@@ -61,13 +62,13 @@ function AddFolder(props: folderProps) {
   const FileToggle = () => {
     setFile(true);
     setFolder(false);
-    setType("file");
+    setType(FILE);
   };
 
   const FolderToggle = () => {
     setFile(false);
     setFolder(true);
-    setType("folder");
+    setType(FOLDER);
   };
 
   return (

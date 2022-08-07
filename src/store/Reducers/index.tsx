@@ -1,4 +1,11 @@
 import { AnyAction, combineReducers } from "redux";
+import {
+  ADD_FOLDER,
+  DELETE_FOLDER,
+  IS_CONTEXT,
+  IS_INFO,
+  IS_MODAL,
+} from "../../utils/constants";
 import { addFolder, deleteFolder } from "../../utils/helpers";
 
 // initial state of folder
@@ -28,11 +35,11 @@ const initialContextState = {
 
 // folder addition
 const folderAddedReducer = (folder = initialFolderState, action: AnyAction) => {
-  if (action.type == "ADD_FOLDER") {
+  if (action.type == ADD_FOLDER) {
     const newFolder = action.payload;
     addFolder(folder, newFolder);
     return { ...folder, newFolder };
-  } else if (action.type == "DELETE_FOLDER") {
+  } else if (action.type == DELETE_FOLDER) {
     return deleteFolder(folder, action.payload);
   }
   return folder;
@@ -40,7 +47,7 @@ const folderAddedReducer = (folder = initialFolderState, action: AnyAction) => {
 
 // Modal show
 const modalReducer = (active = initialModalState, action: AnyAction) => {
-  if (action.type == "IS_MODAL") {
+  if (action.type == IS_MODAL) {
     console.log(action.payload);
     return action.payload;
   }
@@ -48,7 +55,7 @@ const modalReducer = (active = initialModalState, action: AnyAction) => {
 };
 
 const infoReducer = (active = initialInfoState, action: AnyAction) => {
-  if (action.type == "IS_INFO") {
+  if (action.type == IS_INFO) {
     console.log(action.payload);
     return action.payload;
   }
@@ -56,7 +63,7 @@ const infoReducer = (active = initialInfoState, action: AnyAction) => {
 };
 
 const contextReducer = (active = initialContextState, action: AnyAction) => {
-  if (action.type == "IS_CONTEXT") {
+  if (action.type == IS_CONTEXT) {
     console.log(action.payload);
     return action.payload;
   }

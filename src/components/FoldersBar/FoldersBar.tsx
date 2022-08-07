@@ -15,6 +15,7 @@ import MenuBar from "../MenuBar/MenuBar";
 import Nav from "../Nav/Nav";
 
 import "./FolderBar.css";
+import { FILE, FOLDER } from "../../utils/constants";
 
 const foldpass = {
   id: "",
@@ -177,7 +178,7 @@ function FoldersBar(props: folderProps) {
 
               <div className="foldersBar11grid-container">
                 <div className="foldersBar11grid-item">
-                  {props.type === "folder" ? (
+                  {props.type === FOLDER ? (
                     <>
                       <div className="right44addfolder">
                         <div className="foldersBar11new"> New</div>
@@ -201,7 +202,7 @@ function FoldersBar(props: folderProps) {
                             onDoubleClick={() => handleClicked(folder.name)}
                             className="foldersBar11folders"
                           >
-                            {folder.type == "foldersBar11file" ? (
+                            {folder.type == FILE ? (
                               <>
                                 <img
                                   id="right44file"
@@ -227,7 +228,7 @@ function FoldersBar(props: folderProps) {
                   );
                 })}
               </div>
-              {props.type == "file" ? (
+              {props.type == FILE ? (
                 <>
                   {error.length > 0 ? (
                     <>
