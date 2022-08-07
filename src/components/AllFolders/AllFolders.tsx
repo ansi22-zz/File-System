@@ -62,7 +62,6 @@ function AllFolders() {
         </BrowserRouter>
       </div>
     </div>
-    // </div>
   );
 }
 

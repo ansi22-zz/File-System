@@ -37,20 +37,20 @@ function ContextMenu(props: menu) {
     <>
       {showinfo ? (
         <>
-          <div className="bg">
-            <div className="showinfo">
-              <div onClick={() => setShowinfo(false)} className="btnv">
+          <div className="context11bg">
+            <div className="context11showinfo">
+              <div onClick={() => setShowinfo(false)} className="context11btnv">
                 X
               </div>
               File/Folder Information
               <br />
               <br />
-              <div className="infor">
-                <div className="id"> Name: {props.folder?.name}</div>
-                <div className="id">
+              <div className="context11infor">
+                <div className="context11id"> Name: {props.folder?.name}</div>
+                <div className="context11id">
                   Creator's Name: {props.folder?.creator}
                 </div>
-                <div className="id">Size: 20MB</div>
+                <div className="context11id">Size: 20MB</div>
               </div>
             </div>
           </div>
@@ -60,15 +60,15 @@ function ContextMenu(props: menu) {
       )}
       {context ? (
         <>
-          <div className="bg">
+          <div className="context11bg">
             <div className="context" style={{ left: props.x, top: props.y }}>
-              <div className="green" onClick={openHandle}>
+              <div className="context11green" onClick={openHandle}>
                 Open
               </div>
-              <div className="yellow" onClick={infoHandle}>
+              <div className="context11yellow" onClick={infoHandle}>
                 Info
               </div>
-              <div className="red" onClick={deleteHandle}>
+              <div className="context11red" onClick={deleteHandle}>
                 Delete
               </div>
             </div>

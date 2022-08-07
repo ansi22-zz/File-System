@@ -1,44 +1,44 @@
-.MenuBar11Main {
+.menuBar11Main {
   display: flex;
   flex-direction: column;
   overflow: auto;
   /* white-space: nowrap; */
 }
 
-.tree {
+.menuBar11tree {
   margin-top: 10px;
   margin-left: 35px;
   /* color: white; */
 }
-.navbarl12row {
+.menuBar11row {
   margin-top: 10px;
   float: left;
   display: flex;
   flex-direction: row;
 }
-#navbarl12red {
+#menuBar11red {
   background-color: #ed4040;
 }
 
-#span {
+#menuBar11span {
   margin-left: 18px;
   margin-top: 15px;
   /* color: white; */
 }
 
-#navbarl12red:hover {
+#menuBar11red:hover {
   cursor: pointer;
 }
 
-#navbarl12yellow {
+#menuBar11yellow {
   background-color: #ecb62b;
 }
 
-#navbarl12green {
+#menuBar11green {
   background-color: #23e05a;
 }
 
-.navbarl12dot {
+.menuBar11dot {
   color: rgb(66, 63, 63);
   height: 15px;
   width: 15px;

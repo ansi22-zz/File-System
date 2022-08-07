@@ -20,18 +20,15 @@ function AddFolder(props: folderProps) {
 
   const handleClick = () => {
     if (name.length > 0 && creator.length > 0) {
-      const namelength = name.length > 8 ? 8 : name.length;
-      const creatorlength = creator.length > 8 ? 8 : creator.length;
-
-      setName(name.substring(0, namelength));
-      setCreator(creator.substring(0, creatorlength));
+      const concatname = name.substring(0, 8);
+      const concatcreator = name.substring(0, 8);
 
       const data: folderProps = {
         id: md5(name),
         type: type,
-        name: name,
-        path: props.path + "/" + name,
-        creator: creator,
+        name: concatname,
+        path: props.path + "/" + concatname,
+        creator: concatcreator,
         parentId: props.id,
         parentPath: props.path,
         childFolder: [],
@@ -66,6 +63,7 @@ function AddFolder(props: folderProps) {
     setFolder(false);
     setType("file");
   };
+
   const FolderToggle = () => {
     setFile(false);
     setFolder(true);
@@ -100,14 +98,14 @@ function AddFolder(props: folderProps) {
           <input
             type="text"
             value={name}
-            placeholder="folder's name"
+            placeholder="Folder's name"
             id="input"
             onChange={(e) => setName(e.target.value)}
           />
           <input
             type="text"
             value={creator}
-            placeholder="creator's name"
+            placeholder="Creator's name"
             id="input"
             onChange={(e: any) => setCreator(e.target.value)}
             required

@@ -11,30 +11,30 @@
   background-color: white;
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2), 0 2px 1px 0 rgba(0, 0, 0, 0.19);
 }
-.green {
+.context11green {
   padding: 3px;
   cursor: pointer;
 }
-.green:hover {
+.context11green:hover {
   color: green;
 }
 
-.yellow {
+.context11yellow {
   padding: 3px;
   cursor: pointer;
 }
-.yellow:hover {
+.context11yellow:hover {
   color: blue;
 }
 
-.red {
+.context11red {
   padding: 3px;
   cursor: pointer;
 }
-.red:hover {
+.context11red:hover {
   color: red;
 }
-.bg {
+.context11bg {
   position: fixed;
   height: 100vh;
   top: 0;
@@ -42,7 +42,7 @@
   right: 0;
   bottom: 0;
 }
-.showinfo {
+.context11showinfo {
   width: 400px;
   height: 120px;
   padding: 60px;
@@ -58,17 +58,17 @@
   margin-left: 45%;
 }
 
-.infor {
+.context11infor {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.id {
+.context11id {
   padding: 3px;
 }
-.btnv {
+.context11btnv {
   margin-left: 380px;
   margin-top: -40px;
   width: 40px;
@@ -82,17 +82,17 @@
   cursor: pointer;
 }
 
-.btnv:hover {
+.context11btnv:hover {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 @media screen and (max-width: 768px) {
-  .showinfo {
+  .context11showinfo {
     margin-top: 300px;
     margin-left: 25%;
     width: 200px;
   }
-  .btnv {
+  .context11btnv {
     margin-left: 220px;
     margin-top: -20px;
   }

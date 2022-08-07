@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import InfiniteScroll from "react-infinite-scroll-component";
 import axios from "axios";
+import env from "react-dotenv";
 
 import { folderProps, modalProps, State } from "../../utils/types";
 import { setContext, setInfo, setModal } from "../../store/Actions";
@@ -47,7 +48,7 @@ function FoldersBar(props: folderProps) {
   const fetchImages = () => {
     setError("");
     const apiRoot = "https://api.unsplash.com";
-    const client_id = "slCspcsGCeF8Dr6_pVCXKzpOvVL_4C7nvtbgcHJQa6Q";
+    const client_id = env.CLIENT_ID;
     axios
       .get(
         `${apiRoot}/search/photos?query=${props.name}&client_id=${client_id}&page=${page}&per_page=20&orientation=landscape`
@@ -62,7 +63,7 @@ function FoldersBar(props: folderProps) {
         console.log(err.message);
       });
   };
-  // slCspcsGCeF8Dr6_pVCXKzpOvVL_4C7nvtbgcHJQa6Q
+
   useEffect(() => {
     setError("");
     fetchImages();
@@ -118,10 +119,14 @@ function FoldersBar(props: folderProps) {
             ) : (
               <>
                 <div
-                  className="btn"
+                  className="foldersBar11btn"
                   onClick={() => dispatch(setInfo({ active: true }))}
                 >
-                  <img className="imgham" src="/menu-bar.png" alt="" />
+                  <img
+                    className="foldersBar11imgham"
+                    src="/menu-bar.png"
+                    alt=""
+                  />
                 </div>
                 {info ? (
                   <>
@@ -133,7 +138,7 @@ function FoldersBar(props: folderProps) {
               </>
             )}
 
-            <div className="nav">
+            <div className="foldersBar11nav">
               <Nav
                 id={props.id}
                 type={props.type}
@@ -147,7 +152,7 @@ function FoldersBar(props: folderProps) {
               />
             </div>
 
-            <div className="content">
+            <div className="foldersBar11content">
               {modalState ? (
                 <>
                   <Modal
@@ -170,12 +175,12 @@ function FoldersBar(props: folderProps) {
                 <></>
               )}
 
-              <div className="grid-container">
-                <div className="grid-item">
+              <div className="foldersBar11grid-container">
+                <div className="foldersBar11grid-item">
                   {props.type === "folder" ? (
                     <>
                       <div className="right44addfolder">
-                        <div className="new"> New</div>
+                        <div className="foldersBar11new"> New</div>
                         <button onClick={clicked} id="right44btn">
                           +
                         </button>
@@ -188,15 +193,15 @@ function FoldersBar(props: folderProps) {
                 {folders.map((folder: folderProps, idx: number) => {
                   return (
                     <>
-                      <div className="grid-item">
+                      <div className="foldersBar11grid-item">
                         <p key={idx}>
                           <div
                             onClick={folderClicked}
                             onContextMenu={(e) => rightClick(e, folder)}
                             onDoubleClick={() => handleClicked(folder.name)}
-                            className="folders"
+                            className="foldersBar11folders"
                           >
-                            {folder.type == "file" ? (
+                            {folder.type == "foldersBar11file" ? (
                               <>
                                 <img
                                   id="right44file"
@@ -226,7 +231,7 @@ function FoldersBar(props: folderProps) {
                 <>
                   {error.length > 0 ? (
                     <>
-                      <div className="errorimg">
+                      <div className="foldersBar11errorimg">
                         <img
                           src="/error.png"
                           alt="It's not you, It's us. Error Occured!"
@@ -237,7 +242,7 @@ function FoldersBar(props: folderProps) {
                   ) : (
                     <>
                       {" "}
-                      <div className="grid-container-img">
+                      <div className="foldersBar11grid-container-img">
                         <InfiniteScroll
                           dataLength={images.length}
                           next={fetchImages}
@@ -253,7 +258,7 @@ function FoldersBar(props: folderProps) {
                             const str = image.urls.thumb;
                             return (
                               <img
-                                className="img"
+                                className="foldersBar11img"
                                 key={index}
                                 src={str}
                                 alt="loading"

@@ -9,16 +9,16 @@ function MenuBar() {
   const folder = state.addedFolder;
 
   return (
-    <div className="MenuBar11Main">
-      <div className="navbarl12row">
+    <div className="menuBar11Main">
+      <div className="menuBar11row">
         <Link to="/">
-          <span className="navbarl12dot" id="navbarl12red"></span>
+          <span className="menuBar11dot" id="menuBar11red"></span>
         </Link>
-        <span className="navbarl12dot" id="navbarl12yellow"></span>
-        <span className="navbarl12dot" id="navbarl12green"></span>
+        <span className="menuBar11dot" id="menuBar11yellow"></span>
+        <span className="menuBar11dot" id="menuBar11green"></span>
       </div>
-      <span id="span">📁 {folder.name}</span>
-      <div className="tree">
+      <span id="menuBar11span">📁 {folder.name}</span>
+      <div className="menuBar11tree">
         <Tree
           id={folder.id}
           type={folder.type}

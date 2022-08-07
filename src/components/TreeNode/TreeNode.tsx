@@ -17,12 +17,12 @@ function TreeNode(props: folderProps) {
         {props.type == "folder" ? (
           <>
             {" "}
-            <span id="name">📁 {props.name}</span>
+            <span id="treenode11name">📁 {props.name}</span>
           </>
         ) : (
           <>
             {" "}
-            <span id="name">📄 {props.name}</span>
+            <span id="treenode11name">📄 {props.name}</span>
           </>
         )}
 
@@ -30,7 +30,7 @@ function TreeNode(props: folderProps) {
       </div>
 
       <div
-        className="ul"
+        className="treenode11ul"
         style={{
           marginLeft: "20px",
           borderLeft: "1px solid gray",

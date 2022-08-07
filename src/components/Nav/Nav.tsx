@@ -47,25 +47,25 @@ function Nav(props: folderProps) {
   };
 
   return (
-    <div className="main">
-      <div className="navleft">
+    <div className="nav11main">
+      <div className="nav11navleft">
         <>
           &nbsp;&nbsp;
-          <button className="right44btn" onClick={() => navigate(-1)}>
+          <button className="nav11rightbtn" onClick={() => navigate(-1)}>
             &lt;
           </button>
           &nbsp;&nbsp;
-          <button className="right44btn" onClick={() => navigate(1)}>
+          <button className="nav11rightbtn" onClick={() => navigate(1)}>
             &gt;
           </button>
           &nbsp;&nbsp;&nbsp;&nbsp;
-          <div className="scroll">
+          <div className="nav11scroll">
             {patharray.map((element: string) => {
               return (
                 <>
                   &gt;
                   <button
-                    className="breadcrumbs"
+                    className="nav11breadcrumbs"
                     onClick={() => breadcrumbClicked(element)}
                   >
                     {element}
@@ -76,8 +76,8 @@ function Nav(props: folderProps) {
           </div>
         </>
       </div>
-      <div className="navright">
-        <div className="search">
+      <div className="nav11navright">
+        <div className="nav11search">
           <>
             <input
               type="search"
@@ -86,13 +86,13 @@ function Nav(props: folderProps) {
                 clickedd(e.target.value);
               }}
               value={query}
-              id="search"
+              id="nav11search"
             />
             {console.log(show)}
             {query.length > 0 && show ? (
               <>
                 {" "}
-                <div className="grid">
+                <div className="nav11grid">
                   <>
                     {aa
                       .filter((element: folderProps) =>
@@ -106,7 +106,7 @@ function Nav(props: folderProps) {
                                 onClick={() => {
                                   clicked(element.name);
                                 }}
-                                className="check"
+                                className="nav11check"
                               >
                                 {element.name}
                               </div>
@@ -118,7 +118,7 @@ function Nav(props: folderProps) {
                       element.name.toLowerCase().includes(query)
                     ).length === 0 ? (
                       <>
-                        <div className="check">not found</div>
+                        <div className="nav11check">not found</div>
                       </>
                     ) : (
                       <></>
